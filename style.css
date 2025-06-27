@@ -1,0 +1,354 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: linear-gradient(270deg, #FF9933, #FFFFFF, #138808);
+  background-size: 600% 600%;
+  animation: tricolor 20s ease infinite;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Tricolor Animation */
+@keyframes tricolor {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  background: url('images/stadium.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 3rem;
+  border-radius: 20px;
+  color: #fff;
+  animation: fadeInDown 2s ease;
+}
+
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #0072CE;
+  text-shadow: 2px 2px #FFFFFF;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+/* Section Styling */
+section {
+  padding: 3rem 2rem;
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #0a4f95;
+  border-left: 5px solid #FF9933;
+  padding-left: 1rem;
+}
+
+/* Lists */
+ul {
+  padding-left: 2rem;
+}
+
+li {
+  margin-bottom: 0.8rem;
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  opacity: 0;
+  transition: opacity 1s ease;
+  border-radius: 12px;
+}
+
+.slide.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Winning Grid */
+.winning-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  padding-top: 1rem;
+  justify-items: center;
+}
+
+.winning-grid figure {
+  text-align: center;
+  color: #222;
+}
+
+.winning-grid img {
+  width: 100%;
+  max-width: 220px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.winning-grid img:hover {
+  transform: scale(1.05);
+}
+
+.winning-grid figcaption {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #0a4f95;
+}
+
+/* Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.gallery img {
+  width: 200px;
+  height: 140px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 2rem;
+  border-top: 4px solid #FF9933;
+}
+
+footer a {
+  color: #66d9ef;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Back to Top */
+.back-to-top {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #fff;
+  background: #138808;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.back-to-top:hover {
+  background: #0a5c07;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .overlay {
+    padding: 2rem;
+  }
+
+  .gallery img,
+  .winning-grid img {
+    width: 90%;
+    height: auto;
+  }
+
+  section {
+    margin: 1rem;
+  }
+
+  .winning-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding-top: 1.5rem;
+}
+
+.player-card {
+  background: #f9f9f9;
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.player-card img {
+  width: 100%;
+  max-width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.player-card h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #0a4f95;
+}
+
+.player-card p {
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.player-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+/* Records Section Styling */
+#records {
+  padding: 3rem 2rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  margin: 2rem auto;
+  border-radius: 20px;
+  max-width: 1200px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+#records h2 {
+  font-size: 2.2rem;
+  text-align: center;
+  color: #0072CE;
+  margin-bottom: 1rem;
+  border-bottom: 3px solid #0072CE;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.record-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 2rem;
+}
+
+.record-card {
+  background-color: #f4faff;
+  border-left: 5px solid #0072CE;
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
+  transition: all 0.3s ease;
+}
+
+.record-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.record-card h3 {
+  font-size: 1.3rem;
+  color: #0a4f95;
+  margin-bottom: 1rem;
+}
+
+.record-card ul {
+  list-style: disc inside;
+  margin-bottom: 1rem;
+}
+
+.record-card li {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #222;
+}
+
+.record-card a {
+  color: #0072CE;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.record-card a:hover {
+  color: #004b99;
+  text-decoration: underline;
+}
+
+/* Responsive Tweak */
+@media (max-width: 768px) {
+  #records {
+    padding: 2rem 1rem;
+  }
+
+  #records h2 {
+    font-size: 1.6rem;
+  }
+}
